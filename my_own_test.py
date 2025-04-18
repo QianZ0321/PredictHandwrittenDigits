@@ -64,7 +64,7 @@ def load_custom_image(path):
 true_labels = list(range(10))
 
 # Path to your folder
-folder_path = "/Users/x/Desktop/network/my_own_test_data"
+folder_path = "my_own_test_data"
 
 # Build test set from handwritten images
 my_test_data = []
