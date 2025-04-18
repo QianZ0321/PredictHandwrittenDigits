@@ -1,25 +1,44 @@
-This project aims to create a feedforward Neural Network (FNN) that recognizes handwritten digits.
+**Handwritten Digit Recognition with Feedforward Neural Network**
+> **Disclaimer**: This project is based on the foundational neural network implementation from Michael Nielsen’s open-access book _[Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/)_. I built and extended the code to include image preprocessing, custom digit testing, and visualizations.
 
-The structure of FNN:
-    1. Forward Propogation
-        1. Input layer: takes a 28*28 grayscale image of handwritten digits and flattens it into 784*1 vector
-        2. Output layer: z = w * x + b, then passed through a sigmoid function.
+**Network Architecture**
+Layer | Description
+Input | 784 neurons (28×28 grayscale pixels)
+Hidden | 30 neurons (sigmoid activation)
+Output | 10 neurons (digit 0–9 classification)
 
-    2. Loss Calculation
+Training uses stochastic gradient descent (SGD) with backpropagation and mini-batch learning.
 
-    3. Backpropagation: compute gradients
-        - The network calculates how much each weight contributed to the error using the chain rule.
-        - It computes gradients of the loss with respect to each weight in the network.
+**File Structure**
+.
+├── FNN.py               # Core neural network class
+├── mnist_loader.py      # Loads and formats MNIST dataset
+├── main.py              # Trains the FNN on MNIST and evaluates accuracy
+├── my_own_test.py       # Tests the model using user-provided digit images
+└── my_own_test_data/    # Folder with user digit images (0.jpg to 9.jpg)
 
-    4. Training: Stochastic Gradient Dscent (SGD)
-        For each epoch, the whole MNIST dataset is shuffled and split into mini-batches of specific size.
-        The model will update its weights once per mini-batch. And after updating for all batches, one epoch is completed.
+**Test on Your Own Handwritten Digits**
+Place your own digit images (0.jpg to 9.jpg) in the my_own_test_data/ folder. Then run: python my_own_test.py
+The script will:
+- Preprocess each image
+- Visualize the result
+- Predict the digit label
+- Print final accuracy (e.g., 7/10)
 
-            Here is the training loop:
-            for epoch in range(epochs):
-                shuffle training data
-                split into mini-batches
-                for each mini-batch:
-                    update weights/biases using backpropagation
+**Example Output**
+Epoch 0: 9092 / 10000
+Epoch 1: 9227 / 10000
+...
 
-            After each epoch, it optionally prints how many test inputs were classified correctly.
+Image 2.jpg — Predicted: 2, Actual: 2
+Image 6.jpg — Predicted: 8, Actual: 6
+...
+
+Custom Test Accuracy: 7/10 (70%)
+
+**Results**
+Achieved ~92%+ accuracy on MNIST test set after 30 epochs
+~70% accuracy on personal handwritten images (varies with image quality and style)
+
+
+
