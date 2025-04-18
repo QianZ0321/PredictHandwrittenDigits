@@ -1,15 +1,22 @@
-**Handwritten Digit Recognition with Feedforward Neural Network**
-> **Disclaimer**: This project is based on the foundational neural network implementation from Michael Nielsen’s open-access book _[Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/)_. I built and extended the code to include image preprocessing, custom digit testing, and visualizations.
+# 🧠 Handwritten Digit Recognition with Feedforward Neural Network
 
-**Network Architecture**
-Layer | Description
-Input | 784 neurons (28×28 grayscale pixels)
-Hidden | 30 neurons (sigmoid activation)
-Output | 10 neurons (digit 0–9 classification)
+> **Disclaimer**: This project is based on the foundational neural network implementation from Michael Nielsen’s open-access book [_Neural Networks and Deep Learning_](http://neuralnetworksanddeeplearning.com/). I built and extended the code to include image preprocessing, custom digit testing, and visualizations.
+
+---
+
+## 🧱 Network Architecture
+
+| Layer  | Description                                |
+|--------|--------------------------------------------|
+| Input  | 784 neurons (28×28 grayscale pixels)       |
+| Hidden | 30 neurons (sigmoid activation)            |
+| Output | 10 neurons (digit 0–9 classification)      |
 
 Training uses stochastic gradient descent (SGD) with backpropagation and mini-batch learning.
 
-**File Structure**
+---
+
+## 📁 File Structure
 .
 ├── FNN.py               # Core neural network class
 ├── mnist_loader.py      # Loads and formats MNIST dataset
